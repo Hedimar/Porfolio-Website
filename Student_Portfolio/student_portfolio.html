@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1">
+        <title> Portfolio Website </title>
+        <link rel="stylesheet" type="text/css" href="stylesheet/student_portfolio.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div class="Navbar">
+            <a class="active" href="#Home">Home</a>
+            <a href="#About">About</a>
+            <a href="#GitHub">GitHub</a>
+            <a href="#Contact">Contact</a>
+        </div>
+        <br>
+        <br>
+        <div id="home">
+            <video autoplay muted loop id="cosmos">
+                <source src="video/space.mp4">
+                </video>
+            </div>
+            <div class="video_text">
+                <h2 class="white-text" align="center">Hello, my name is Hedimar Llentada <h2>
+                <strong>
+                    <p class="center">
+                        <q>Opportunities present themselves to those who have prepared</q>-Haikyu
+                        <br>
+                        <br> Thank you for stopping by and enjoy!
+                    </p>
+                    </strong>
+                </div>
+        <!--About-->
+        <div class="row" id="About">
+            <!--Left Column-->
+            <div class="Column_2">
+                <img src="images/web1.jpg." alt="Couldn't Load Image">
+            </div>
+           <!--Right Column--> 
+            <div class="Column_1">
+                <h1>About</h1>
+                <p> I love to code and also wants to learn more about web development, One thing about me is I love anime.
+                <br>
+                <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target=""> The Tech Academy</a>'s Software Developer Boot Camp.
+                <br>I am a Front-End Developer and would love to work with you. <a href="#Contact"> Contact</a> me below!
+                </p>
+            </div>
+        </div>
+        <!--GitHub-->
+        <div class="card " id="GitHub">
+            <!--Left Column-->
+            <div class="Column_1">
+                <h1>GitHub</h1>
+                <p> You can view my coding projects on my GitHub profile here:
+                    <br>
+                    <p class="center"><a href="https://github.com/Hedimar" target="_blank">GitHub Profile</a></p>
+                </p>
+            </div>
+            <!--Right Column-->
+            <div class="Column_2">
+                <a href="https://github.com/Hedimar" target="_blank"><img src="images/github.jpg" alt="GitHub Logo"></a> 
+            </div>
+        </div>
+        <!--Contact-->
+        <div class="row" id="Contact">
+            <!--Contact(left column)-->
+            <div class="Column_2 Column_tall">
+                <img src="images/email1.jpg" alt="email">
+            </div>
+            <!--Contact(right column)-->
+            <div class="Column_1 Column_tall">
+                <h1>Contact</h1>
+                <form action="" method="POST"> 
+                    <label>Name:</label>
+                        <input type="text" placeholder="Please enter your name here">
+                    <label>Email:</label>
+                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
+                    <label>Message:</label>
+                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+                        <input type="submit" value="SUBMIT">
+                </form>
+            </div>
+        </div>
+        <!--Footer-->
+        <footer>
+            <div>
+                <p class="end">CopyRight By Hedimar Llentada</p>
+                
+                    <span style="padding-left: 15px;">
+                        <span style="padding-left: 15px;" class="social"><a href="#"><i class="bi bi-facebook"></i></a></span>
+                            <span style="padding-left: 15px;" class="social"><a href="#"><i class="bi bi-instagram"></i></a></span>
+                                <span style="padding-left: 15px;" class="social"><a href="#"><i class="bi bi-twitter"></i></a></span>
+                        </span>
+                
+            </div>
+        </footer>
+    </body>
+</html>
