@@ -1,7 +1,19 @@
-
+html{
+    scroll-behavior: smooth;
+}
 /* Body */
 body {
-    margin: 0%  
+    margin: 0%;
+    opacity: 1;
+    transition: 3s opacity; 
+    letter-spacing: .2vw; 
+    font-family: Avant Garde, Helvetica;
+    font-size: 1.5vw; 
+    overflow-x: hidden;  
+    user-select: none;
+}
+body.fade-out {
+    opacity: .1; 
 }
 
 /* Heading 1 elements */
@@ -192,6 +204,13 @@ footer {
 }
 
 /* Texts over the video */
+#cosmos{
+    position: fixed; 
+    right: 0; 
+    bottom: 0; 
+    min-width: 100%; 
+    z-index: -1; 
+}
 .Video_Text {
     background: rgba(0, 0, 0, 0.5); 
     color: white; 
@@ -206,6 +225,92 @@ footer {
     to {top: 0vw;} 
 }
 /***** END OF VIDEO STYLING *****/
+#Slideshow_Background {
+    background: rgba(255, 255, 255, 0.35);
+}
+.mySlides{
+    display: none;
+}
+#Slideshow_Container {
+    width: 39.5vw; 
+    height: auto;  
+    padding-top: 4%; 
+    position: relative; 
+    margin:auto; 
+}
+#Slideshow_Container a {
+    text-decoration: none;
+}
+.Slideshow_Images {
+    vertical-align: middle; 
+    height: auto; 
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, .75); 
+    width: 100%;
+}
+.Previous, .Next {
+    cursor: pointer; 
+    position: absolute; 
+    top: 50%; 
+    width: auto; 
+    padding: 2vw; 
+    color: darkgray; 
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0; 
+    user-select: none; 
+    transition: 0.6s ease; 
+}
+.Next {
+    right: 0; 
+    border-radius: 3px 0 0 3px; 
+}
+.Previous:hover, .Next:hover {
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white; 
+}
+.text {
+    color: white; 
+    padding: 1vw;
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+    text-align: center; 
+    font-family: Perpetua, Rockwell Extra Bold;
+    letter-spacing: .1vw;
+    font-size: 1.5vw; 
+    background-color: rgba(0, 0, 0, 0.75); 
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+.dot {
+    cursor: pointer; 
+    height: 1vw; 
+    width: 1vw;
+    margin: .25vw; 
+    background-color: white; 
+    border-radius: 50%; 
+    display: inline-block; 
+    transition: background-color 0.6s ease; 
+    z-index: 1; 
+}
+.active, .dot:hover {
+    background-color: black;
+}
+.fade {
+    animation-name: fade; 
+    animation-duration: 1.5s; 
+    -webkit-animation-name: fade; 
+    -webkit-animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {opacity: .4;} 
+    to {opacity: 1;} 
+}
+
+@keyframes fade {
+    from {opacity: .4;} 
+    to {opacity: 1;} 
+}
 
 * { 
     box-sizing: border-box;
@@ -214,8 +319,8 @@ footer {
 .Column_1 {
     float: left;
     width: 50%;
-    padding: 10px;
-    padding-top: 3%; 
+    padding: 30px;
+    padding-top: -10%; 
     height: 400px;
     background: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
@@ -224,6 +329,7 @@ footer {
 @media screen and (max-width: 576px) {
     .Column_1 {
         overflow: auto;
+
     }
 }
 
@@ -259,7 +365,7 @@ input[type=text] {
     margin-top: 6px; 
     margin-bottom: 16px; 
     resize: vertical; 
-    font-family: Perpetua, Rockwell Extra Bold;
+    font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
 /* Hover effects for input boxes */
@@ -279,7 +385,7 @@ input[type=submit] {
     display: block; 
     margin-left: auto; 
     margin-right: auto;
-    font-family: Perpetua, Rockwell Extra Bold;
+    font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
 /* Hover effect for submit button */
@@ -296,7 +402,7 @@ form {
     background:linear-gradient(to top, #dfe9f3 0%, white 100%);
  
     padding: 10px; 
-    font-family: "Trebuchet MS", Optima;
+    font-family: Comic Sans MS, Comic Sans, cursive;
 }
 .end{
     font-size: large;
@@ -353,4 +459,186 @@ span{
     box-shadow: 0 0 5px #eb2632;
     text-shadow: 0 0 5px #eb2632;
   }
+  .Pop_Up_Button {
+    position: fixed; 
+    bottom: 1.75vw; 
+    right: 1.75vw; 
+    width: 25vw; 
+    background-color: white; 
+    color: black; 
+    border: solid black; 
+    cursor: pointer; 
+    -webkit-animation: movePopup 5s; 
+    animation: movePopup 5s; 
+}
 
+
+@keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+@-webkit-keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+/* Styling for the contact form */
+.form-popup {
+    z-index: 8; 
+    display: none; 
+    position: fixed; 
+    bottom: .5vw; 
+    right: .5vw; 
+}
+
+/* Form styling */
+.form-container {
+    max-width: 49vw; 
+    padding: 1vw;
+    background-color: white; 
+}
+
+/* Input fields */
+.form-container input[type=text] {
+    width: 100%; 
+    padding: .93vw; 
+    margin: .6vw 0 .6vw 0; 
+    border: none; 
+    background: Gainsboro; 
+    font-size: 1vw; 
+}
+
+/* General styling for all buttons */
+button {
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
+    font-weight: bold; 
+    padding: 1.5vw; 
+    width: 100%; 
+    height: auto; 
+}
+
+/* Hover effect for contact and submit buttons */
+button:hover, .form-container .btn:hover {
+    color: white; 
+    background-color: black; 
+    transition-duration: 1s; 
+    -webkit-transition-duration: 1s; 
+    border-color: silver; 
+}
+
+/* Submit button */
+.form-container .btn {
+    background-color: white; 
+    color: black;
+    border-color: black;
+    margin-bottom: 1vh; /
+}
+
+/* Close button */
+.form-container .cancel {
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+/* Styling for close button on hover */
+.form-container .cancel:hover {
+    color: white;
+    background: radial-gradient(circle at 10% 20%, rgb(226, 37, 37) 0%, rgb(211, 49, 49) 82.8%);
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
+}
+
+@media screen and (max-width: 527px) {
+    p {
+        font-size: 3.75vw;
+    }
+}
+
+@media screen and (min-width: 528px) and (max-width: 660px) {
+    p {
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (min-width: 661px) and (max-width: 799px) {
+    p {
+        font-size: 2.75vw;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 924px) {
+    p {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (min-width: 925px) and (max-width: 1050px) {
+    p {
+        font-size: 2.25vw;
+    }
+}
+
+@media screen and (min-width: 1051px) and (max-width: 1310px) {
+    p {
+        font-size: 2vw;
+    } 
+}
+
+@media screen and (min-width: 1311px) and (max-width: 1535px) {
+    p {
+        font-size: 1.75vw;
+    }
+}
+
+@media screen and (min-width: 1536px) and (max-width: 2269px) {
+    p {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width: 2270px) {
+    p {
+        font-size: 1.35vw;
+    }
+}
+
+
+@media screen and (max-width: 1080px) {
+    .Navbar a{
+        width: 20%; 
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .quote{
+        font-size: 3.5vw;
+    }
+
+    .white-text {
+        font-size: 4.5vw;
+    }
+}
+
+/* Media rules to increase the size of the columns for larger screens */
+@media screen and (min-width: 1725px) {
+    .Column_1 {
+        height: 550px;
+    }
+    .Column_2 {
+        height: 550px;
+    }
+}
+
+
+
+@media screen and (min-width: 2000px) {
+    h1{
+        margin-top: 0;
+    }
+}

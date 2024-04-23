@@ -10,15 +10,17 @@
     <body>
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
         <br>
         <br>
         <div id="home">
             <video autoplay muted loop id="cosmos">
                 <source src="video/space.mp4">
+                Your browser does not support HTML5 video.
                 </video>
             </div>
             <div class="video_text">
@@ -30,6 +32,39 @@
                         <br> Thank you for stopping by and enjoy!
                     </p>
                     </strong>
+                </div>
+                <div id="Slideshow">
+                    <div id="Slideshow_Background"> 
+                        <div id="Slideshow_Container">
+                            <div class="mySlides fade">
+                                <img class="Slideshow_Images" src="images/profile.jpg" alt="">
+                                <div class="text">I'm available to assist you on your project!</div>
+                            </div>
+                            <div class="mySlides fade">
+                                <img class="Slideshow_Images" src="images/image2.jpg" alt="HTML, CSS, and JS logos"> 
+                                <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                            </div>
+                            <div class="mySlides fade">
+                                <img class="Slideshow_Images" src="images/python.png" alt="Python logo">
+                                <div class="text">the popular programming language Python</div>
+                            </div>
+                            <div class="mySlides fade">
+                                <img class="Slideshow_Images" src="images/contact.jpg" alt="Replace with a picture of your choosing"> 
+                                <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div> 
+                            </div>
+                            <!--Previous & Next-->
+                            <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <br>
+                        <div style="text-align: center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span> 
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                            
+                        </div>
+                    </div>    
                 </div>
         <!--About-->
         <div class="row" id="About">
@@ -47,6 +82,7 @@
                 </p>
             </div>
         </div>
+       
         <!--GitHub-->
         <div class="card " id="GitHub">
             <!--Left Column-->
@@ -70,6 +106,9 @@
             </div>
             <!--Contact(right column)-->
             <div class="Column_1 Column_tall">
+                <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+           <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container">
                 <h1>Contact</h1>
                 <form action="" method="POST"> 
                     <label>Name:</label>
@@ -79,6 +118,7 @@
                     <label>Message:</label>
                         <input type="text" id="Message" name="Message" placeholder="Please write your message here">
                         <input type="submit" value="SUBMIT">
+                        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
@@ -95,5 +135,6 @@
                 
             </div>
         </footer>
+        <script src="student_portfolio.js"></script>
     </body>
 </html>
